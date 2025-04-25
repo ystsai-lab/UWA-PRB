@@ -1,0 +1,45 @@
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+pip install -r requirements.txt
+pip install "numpy<1.24.0"
+pip install local-attention
+pip install -U albumentations
+
+
+python detect.py --source ./datasets/dataset_demo/images/ --weights ./weights/YOLOv7-PRB-p6.pt --device 0
+python detect.py --source ./datasets/dataset_demo/images/ --weights ./weights/prb-fpn-csp.pt --device 0
+python detect.py --source ./datasets/dataset_demo/images/ --weights yolov7.pt --device 0
+
+python train.py --workers 8 --device 0 --batch-size 4 --data dataset/DUOre_y7/data.yaml --epochs 300 --cfg cfg/training/PRB_Series/test-yolov7-PRB-3PY.yaml --weights weights/prb-fpn_training.pt --name YoloV7-PRB-3PY-1GPU-test --hyp data/hyp.scratch.tiny.yaml
+
+
+# 訓練
+
+python train.py
+--workers 8
+--device 0
+--batch-size 8
+--data dataset/DUOre/data.yaml
+--epochs 300
+--cfg cfg/test-yolov7-PRB-3PY.yaml
+--weights weights/prb-fpn_training.pt
+--name YoloV7-PRB-3PY-1GPU-test
+--hyp data/hyp.scratch.tiny.yaml
+
+
+
+# resume = true
+python train.py
+--workers 8
+--device 0
+--batch-size 8
+--data dataset/DUOre/data.yaml
+--epochs 300
+--cfg cfg/test-yolov7-PRB-3PY.yaml
+--weights runs/train/YoloV7-PRB-3PY-1GPU-test6/weights/last.pt
+--name YoloV7-PRB-3PY-1GPU-test
+--hyp data/hyp.scratch.tiny.yaml
+
+疑難雜症
+RuntimeError: indices should be either on cpu or on the same device as the indexed tensor (cpu)
+sol:
+https://blog.csdn.net/qq_41318914/article/details/128228712

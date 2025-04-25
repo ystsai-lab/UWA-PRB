@@ -1,0 +1,94 @@
+# test-yolov7-PRB-3PY 複製 yolov7-PRB-3PY
+
+# 測baseline
+
+python train.py
+--workers 8
+--device 0
+--batch-size 4
+--data datasets/new_DUO2/data.yaml
+--epochs 300
+--cfg cfg/test-yolov7-PRB-3PY.yaml
+--weights weights/prb-fpn_training.pt
+--name y7_prb_3py_base
+--hyp data/hyp.scratch.p5.yaml
+
+# resume = true
+python train.py
+--workers 8
+--device 0
+--batch-size 4
+--data datasets/new_DUO2/data.yaml
+--epochs 300
+--cfg cfg/test-yolov7-PRB-3PY.yaml
+--weights runs/train/YoloV7-PRB-3PY-baseline/weights/last.pt
+--name YoloV7-PRB-3PY-1GPU-baseline
+--hyp data/hyp.scratch.tiny.yaml
+
+
+# att的訓練參數
+--workers
+8
+--device
+0
+--batch-size
+4
+--data
+datasets/new_DUO2/data.yaml
+--epochs
+300
+--cfg
+cfg/yolov7-PRB-3PY-my-att.yaml
+--weights
+weights/prb-fpn_training.pt
+--name
+y7-PRB-3PY-myatt
+--hyp
+data/hyp.scratch.p5.yaml
+
+# att的訓練參數
+--workers 8
+--device 0
+--batch-size 4
+--data datasets/new_DUO2/data.yaml
+--epochs 300
+--cfg cfg/yolov7-PRB-3PY-my-att.yaml
+--weights weights/prb-fpn_training.pt
+--name y7-PRB-3PY-myatt
+--hyp data/hyp.scratch.p5.yaml
+
+
+##
+--workers 8
+--device 0
+--batch-size 4
+--data datasets/new_ERSGAN_Resized/data.yaml
+--epochs 300
+--cfg cfg/yolov7-PRB-3PY-my-att.yaml
+--weights weights/prb-fpn_training.pt
+--name y7-new_ERSGAN_Resized
+--hyp data/hyp.scratch.p5.yaml
+
+
+
+
+--workers 8
+--device 0
+--batch-size 4
+--data datasets/new_DUO2/data.yaml
+--epochs 300 --img 640 640
+--cfg cfg/y7-PRB-3PY-spp-att.yaml
+--weights weights/prb-fpn_training.pt
+--name y7-new2-spp-att-nwd
+--hyp data/hyp.scratch.p5.yaml
+
+
+--workers 8
+--device 0
+--batch-size 4
+--data datasets/DUOmain640/data.yaml
+--epochs 300 --img 640 640
+--cfg cfg/y7-PRB-3PY-spp-att.yaml
+--weights weights/prb-fpn_training.pt
+--name y7-prb-spp-att-nwd
+--hyp data/hyp.scratch.p5.yaml

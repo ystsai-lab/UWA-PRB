@@ -1,0 +1,10 @@
+python train.py
+--workers 8
+--device 0
+--batch-size 8
+--data dataset/DUOcl/data.yaml
+--epochs 300
+--cfg cfg/test-yolov7-PRB-3PY.yaml
+--weights weights/prb-fpn_training.pt
+--name YoloV7-PRB-3PY-1GPU-colorizeTrain
+--hyp data/hyp.scratch.tiny.yaml
