@@ -19,3 +19,6 @@ These results highlight the model’s robustness and effectiveness, offering sig
 - Marine ecosystem management
 
 By addressing scale variability and achieving high accuracy even for rare species such as **scallops**, the proposed model supports practical applications in **underwater monitoring and conservation**.
+
+## Citation
+Tsai, Y. S., Tsai, C. T., & Huang, J. H. (2025). Multi-scale detection of underwater objects using attention mechanisms and normalized Wasserstein distance loss. The Journal of Supercomputing, 81(6), 1-33.
