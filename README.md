@@ -29,11 +29,42 @@ Make sure you are using **Python 3.8 or later**. Install all required dependenci
 pip install -r requirements.txt
 ```
 
+If you are using an NVIDIA GPU, ensure that the appropriate CUDA drivers are installed for compatibility with the prebuilt versions of torch, torchvision, and torchaudio (e.g., +cu117).
+
 ## Training
+
+To train the UWA-PRB model from scratch using the provided dataset and configuration file:
+
+```bash
+--workers
+8
+--device
+0
+--batch-size
+4
+--data
+YOUR_DATAPATH_HERE.yaml
+--epochs
+300
+--img
+640
+640
+--cfg
+/UWA-PRB-OwOb/cfg/UWA-PRB.yaml
+--weights
+weights/yolov7.pt
+--name
+uwa-prb-test
+--hyp
+data/hyp.scratch.p5.yaml
+```
 
 ## Dataset
 
-=======
+The following datasets are used to train and evaluate the model:
+- **[Detecting Underwater Objects (DUO)](https://paperswithcode.com/dataset/duo)** 
+- **[Rethinking general underwater object detection (RUOD)](https://universe.roboflow.com/cttlab/ruod-copy)** 
+
 ## Citation
 Tsai, Y. S., Tsai, C. T., & Huang, J. H. (2025). Multi-scale detection of underwater objects using attention mechanisms and normalized Wasserstein distance loss. The Journal of Supercomputing, 81(6), 1-33.
 
