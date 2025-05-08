@@ -19,3 +19,16 @@ These results highlight the model’s robustness and effectiveness, offering sig
 - Marine ecosystem management
 
 By addressing scale variability and achieving high accuracy even for rare species such as **scallops**, the proposed model supports practical applications in **underwater monitoring and conservation**.
+
+## Installation
+
+Make sure you are using **Python 3.8 or later**. Install all required dependencies using the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Training
+
+## Dataset
+
