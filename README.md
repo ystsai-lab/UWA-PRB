@@ -33,7 +33,7 @@ If you are using an NVIDIA GPU, ensure that the appropriate CUDA drivers are ins
 
 ## Training
 
-To train the UWA-PRB model from scratch using the provided dataset and configuration file:
+To train our model, please go to the [yolov7_prb](https://github.com/ystsai-lab/UWA-PRB/tree/main/yolov7_prb) directory and run `train.py` with the following arguments:
 
 ```bash
 --workers
