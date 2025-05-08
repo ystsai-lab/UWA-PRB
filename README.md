@@ -20,6 +20,7 @@ These results highlight the model’s robustness and effectiveness, offering sig
 
 By addressing scale variability and achieving high accuracy even for rare species such as **scallops**, the proposed model supports practical applications in **underwater monitoring and conservation**.
 
+
 ## Installation
 
 Make sure you are using **Python 3.8 or later**. Install all required dependencies using the following command:
@@ -31,4 +32,8 @@ pip install -r requirements.txt
 ## Training
 
 ## Dataset
+
+=======
+## Citation
+Tsai, Y. S., Tsai, C. T., & Huang, J. H. (2025). Multi-scale detection of underwater objects using attention mechanisms and normalized Wasserstein distance loss. The Journal of Supercomputing, 81(6), 1-33.
 
